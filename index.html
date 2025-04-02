@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificação</title>
+    <style>
+        /* Estilo do botão */
+        .btn-notification {
+            background: linear-gradient(135deg, #ff4d4d, #ff1a1a);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0px 4px 10px rgba(255, 77, 77, 0.4);
+        }
+
+        .btn-notification:hover {
+            background: linear-gradient(135deg, #ff6666, #ff3333);
+            transform: scale(1.05);
+        }
+
+        /* Estilo do modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+            text-align: center;
+            width: 300px;
+        }
+        .modal img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .modal button {
+            margin-top: 10px;
+            padding: 8px 12px;
+            border: none;
+            background: #555;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .modal button:hover {
+            background: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="btn-notification">🔥 Mostrar Notificação</button>
+
+    <div class="modal" id="customModal">
+        <h2>Oi Mary ❤️</h2>
+        <p>Eu amo a Maria Duda!</p>
+        <img src="https://seusite.com/imagedorian/imagem.png" alt="Imagem">
+        <button onclick="fecharModal()">Fechar</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let btnNotification = document.querySelector('.btn-notification');
+            let modal = document.getElementById("customModal");
+
+            btnNotification.addEventListener("click", () => {
+                modal.style.display = "block";
+            });
+        });
+
+        function fecharModal() {
+            document.getElementById("customModal").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
